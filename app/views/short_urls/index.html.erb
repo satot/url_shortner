@@ -15,7 +15,7 @@
     <% @short_urls.each do |short_url| %>
       <tr>
         <td><%= short_url.url %></td>
-        <td><%= short_url.identifier %></td>
+        <td><%= "https://domain.com/r/" + short_url.identifier %></td>
         <td><%= link_to 'Show', short_url %></td>
         <td><%= link_to 'Edit', edit_short_url_path(short_url) %></td>
         <td><%= link_to 'Destroy', short_url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
