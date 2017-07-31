@@ -1,5 +1,6 @@
 class ShortUrl < ApplicationRecord
   validates :url, presence: true, format: URI.regexp(/\A(?i)https?/)
+  has_many :access_log
 
   before_create :set_identifier
 

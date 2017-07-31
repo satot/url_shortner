@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170730174104) do
+ActiveRecord::Schema.define(version: 20170731152827) do
+
+  create_table "access_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "short_url_id"
+    t.string "ip"
+    t.text "user_agent"
+    t.string "uuid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["short_url_id"], name: "index_access_logs_on_short_url_id"
+  end
 
   create_table "short_urls", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "url"
@@ -19,4 +29,5 @@ ActiveRecord::Schema.define(version: 20170730174104) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "access_logs", "short_urls"
 end
