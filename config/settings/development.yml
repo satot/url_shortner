@@ -1,0 +1,2 @@
+endpoints:
+  redirector: "http://localhost/r/"

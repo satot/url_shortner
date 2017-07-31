@@ -1,0 +1,2 @@
+endpoints:
+  redirector: <%= ENV['ENDPOINT_REDIRECT'] %>
