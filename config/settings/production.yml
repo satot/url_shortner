@@ -1,2 +1,3 @@
 endpoints:
   redirector: <%= ENV['ENDPOINT_REDIRECT'] %>
+  statistcs: <%= ENV['ENDPOINT_STATISTICS'] %>

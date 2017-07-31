@@ -8,7 +8,7 @@
       <th>Url</th>
       <th>Identifier</th>
       <th>Shortened Url</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -22,6 +22,8 @@
         <td><%= link_to 'Show', short_url %></td>
         <td><%= link_to 'Edit', edit_short_url_path(short_url) %></td>
         <td><%= link_to 'Destroy', short_url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% statistic_url = Settings.endpoints.statistcs + short_url.identifier %>
+        <td><%= link_to 'Show stats(JSON)', statistic_url, target: "_blank" %></td>
       </tr>
     <% end %>
   </tbody>

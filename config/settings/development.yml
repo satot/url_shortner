@@ -1,2 +1,3 @@
 endpoints:
   redirector: "http://localhost/r/"
+  statistcs: "http://localhost/stats/"
